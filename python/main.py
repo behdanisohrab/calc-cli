@@ -1,9 +1,9 @@
 while True:
     try:
-        expr = input("Enter a calculation (e.g. 1 + 2): ")
-        num1, op, num2 = expr.split()
-        num1 = float(num1)
-        num2 = float(num2)
+        expr = input("Enter a calculation (e.g. 1 + 2): ").replace(" ", "")
+        num1 = float(expr[0])
+        op = expr[1]
+        num2 = float(expr[2:])
 
         if op == "+":
             result = num1 + num2
