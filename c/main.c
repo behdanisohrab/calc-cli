@@ -5,7 +5,10 @@ int main() {
     char op;
 
     printf("Enter a calculation (e.g. 1 + 2): ");
-    scanf("%f %c %f", &num1, &op, &num2);
+    if (scanf("%f %c %f", &num1, &op, &num2) != 3) {
+        printf("Invalid input format\n");
+        return 1;
+    }
 
     switch(op) {
         case '+':
@@ -18,7 +21,7 @@ int main() {
             result = num1 * num2;
             break;
         case '/':
-            if(num2 == 0) {
+            if (num2 == 0) {
                 printf("Error: division by zero\n");
                 return 1;
             }
